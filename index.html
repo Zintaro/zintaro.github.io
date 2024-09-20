@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        background: #6e28d9;
+        padding: 0 24px;
+        margin: 0;
+        height: 100vh;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .button {
+        background-color: #04AA6D; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      input {
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <input class="domain" id="domain" placeholder="Enter domain" />
+    <button class="button sender" onclick="send()">Redirect</button>
+    
+    <script>
+      function redirectUser(domainofnoip) {
+        window.location.replace(`http://freeddns.noip.com/?d=${domainofnoip}&u=Z290ZG5zLmNoLw==`);
+      }
+
+      function send() {
+        const domainV = document.getElementById('domain').value;
+        if (domainV) {
+          redirectUser(domainV);
+        } else {
+          alert('Please enter a domain');
+        }
+      }
+    </script>
+  </body>
+</html>
